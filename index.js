@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const products = require("./products");
+const port = process.env.PORT || 3000
+
 
 app.get("/iphones", function (req, res) {
   res.json(products.iphones);
@@ -16,6 +18,6 @@ app.get("/product/:id", (req, res) => {
   res.json(product);
 });
 
-app.listen(3000, () => {
-  console.log("listen on 3000");
+app.listen(port, () => {
+  console.log("listen on " + port);
 });
